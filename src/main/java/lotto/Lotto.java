@@ -22,8 +22,6 @@ public class Lotto {
 
     public String getLottoSummery() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(LottoFormatter.getFormattedLottoSize(numbers.size()))
-                .append("\n");
         stringBuilder.append(LottoFormatter.getLottoSummery(numbers))
                 .append("\n")
                 .append("\n");

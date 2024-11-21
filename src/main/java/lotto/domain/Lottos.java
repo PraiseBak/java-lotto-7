@@ -13,6 +13,8 @@ public class Lottos {
 
     public String createLottoHistory(){
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(LottoFormatter.getFormattedLottoSize(lottos.size()))
+                .append("\n");
         for(Lotto lotto : lottos){
             stringBuilder.append(lotto.getLottoSummery()).append("\n");
         }

@@ -14,8 +14,6 @@ public class Application {
         buyLotto();
         inputWinningNumbers();
         inputBonusNumber();
-
-
     }
 
     private static void inputBonusNumber() {
