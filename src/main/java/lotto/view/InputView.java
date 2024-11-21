@@ -2,6 +2,7 @@ package lotto.view;
 
 
 import camp.nextstep.edu.missionutils.Console;
+import java.util.List;
 import lotto.exception.LottoException;
 import lotto.exception.LottoExceptionMessage;
 import lotto.utility.NumberUtility;
@@ -27,5 +28,13 @@ public class InputView {
 
     private static String inputLine() {
         return Console.readLine();
+    }
+
+    public static int inputBonusNumber() {
+        return 0;
+    }
+
+    public static List<Integer> inputWinningNumbers() {
+
     }
 }
