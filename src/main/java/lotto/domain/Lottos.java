@@ -10,4 +10,12 @@ public class Lottos {
     public Lottos(List<Lotto> lottos){
         this.lottos = lottos;
     }
+
+    public String createLottoHistory(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(Lotto lotto : lottos){
+            stringBuilder.append(lotto.getLottoSummery()).append("\n");
+        }
+        return stringBuilder.toString();
+    }
 }

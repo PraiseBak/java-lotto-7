@@ -27,7 +27,7 @@ public class LottoMachineService {
         }
         Lottos lottos = new Lottos(lottoList);
         lottoRepository.saveLottos(lottos);
-        return LottoFormatter.getFormattedBuyLotto(lottos);
+        return lottos.createLottoHistory();
     }
 
     private void validateBuyLotto(int money) {
