@@ -21,4 +21,8 @@ public class BonusNumber {
             throw new LottoException(BONUS_NUMBER_INPUT_INVALID);
         }
     }
+
+    public Integer getNumber() {
+        return bonusNumber;
+    }
 }

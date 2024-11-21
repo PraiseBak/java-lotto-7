@@ -16,7 +16,7 @@ public class Lottos {
         stringBuilder.append(LottoFormatter.getFormattedLottoSize(lottos.size()))
                 .append("\n");
         for(Lotto lotto : lottos){
-            stringBuilder.append(lotto.getLottoSummery()).append("\n");
+            stringBuilder.append(lotto.getLottoSummery());
         }
         return stringBuilder.toString();
     }

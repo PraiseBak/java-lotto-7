@@ -22,6 +22,7 @@ public class LottoService {
     }
 
     public void inputWinningNumber(List<Integer> numbers) {
+
         LottoNumberValidator.validateLottoNumbers(numbers);
         WinningNumber winningNumber = new WinningNumber(numbers);
         lottoRepositroy.saveWinningNumber(winningNumber);

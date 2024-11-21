@@ -23,7 +23,6 @@ public class Lotto {
     public String getLottoSummery() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(LottoFormatter.getLottoSummery(numbers))
-                .append("\n")
                 .append("\n");
         return stringBuilder.toString();
     }
