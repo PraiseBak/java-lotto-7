@@ -13,6 +13,7 @@ public class LottoRepository {
     private final static String ALREADY_INIT_WINNING_NUMBER = "우승 숫자는 최초 한번만 초기화 가능합니다.";
     private final static String ALREADY_INIT_WINNING_NUMBERS = "로또 숫자는 최초 한번만 초기화 가능합니다.";
 
+
     private Lottos lottos;
     private WinningNumbers winningNumbers;
     private WinningNumber winningNumber;
@@ -44,5 +45,21 @@ public class LottoRepository {
             throw new LottoStateException(ALREADY_INIT_BONUS_NUMBER);
         }
         this.bonusNumber = bonusNumber;
+    }
+
+    public WinningNumbers getWinningNumbers() {
+        return winningNumbers;
+    }
+
+    public BonusNumber getBonusNumber() {
+        return bonusNumber;
+    }
+
+    public Lottos getLottos() {
+        return lottos;
+    }
+
+    public WinningNumber getWinningNumber() {
+        return winningNumber;
     }
 }

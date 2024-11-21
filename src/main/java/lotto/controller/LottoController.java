@@ -21,10 +21,11 @@ public class LottoController {
     }
 
     public void inputBonusNumber(int bonusNumber){
-
+        lottoService.inputBonusNumber(bonusNumber);
+        lottoService.initWinningNumbers();
     }
 
     public String calculateLottoResult(){
-        return "로또결과랑 수익류 ";
+        return lottoService.calculateLottoResult();
     }
 }
