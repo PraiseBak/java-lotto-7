@@ -1,14 +1,15 @@
 package lotto.domain;
 
-import java.util.List;
-import lotto.Lotto;
-
 public class WinningNumbers {
+    private final WinningNumber winningNumber;
+    private final BonusNumber bonusNumber;
 
-    private final List<Integer> winningNumbers;
+    public WinningNumbers(WinningNumber winningNumber, BonusNumber bonusNumber) {
+        this.winningNumber = winningNumber;
+        this.bonusNumber = bonusNumber;
+    }
 
-    public WinningNumbers(List<Integer> winningNumbers)
-    {
-        this.winningNumbers = winningNumbers;
+    public String calculateResult() {
+        return "";
     }
 }
