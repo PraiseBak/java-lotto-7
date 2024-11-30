@@ -1,10 +1,9 @@
 package lotto;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import lotto.domain.LottoFormatter;
-import lotto.exception.LottoException;
+import lotto.domain.WinningNumbers;
+import lotto.dto.CalculateWinningNumberResult;
 import lotto.validator.LottoNumberValidator;
 
 public class Lotto {
@@ -25,5 +24,10 @@ public class Lotto {
         stringBuilder.append(LottoFormatter.getLottoSummery(numbers))
                 .append("\n");
         return stringBuilder.toString();
+    }
+
+    public CalculateWinningNumberResult calculte(WinningNumbers winningNumbers) {
+        CalculateWinningNumberResult calWinningNumberResult = winningNumbers.calSameNumber(numbers);
+        return calWinningNumberResult;
     }
 }

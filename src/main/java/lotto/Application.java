@@ -1,10 +1,7 @@
 package lotto;
 
-import com.sun.source.doctree.BlockTagTree;
 import java.util.List;
 import lotto.controller.LottoController;
-import lotto.exception.LottoException;
-import lotto.exception.LottoExceptionMessage;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
@@ -13,14 +10,15 @@ public class Application {
     public static void main(String[] args) {
         buyLotto();
         inputWinningNumbers();
-        inputBonusNumber();
+        inputBonusNumberAndPlay();
     }
 
-    private static void inputBonusNumber() {
+    private static void inputBonusNumberAndPlay() {
         while (true){
             try{
                 int bonusNumber = InputView.inputBonusNumber();
                 lottoController.inputBonusNumber(bonusNumber);
+                OutputView.println(lottoController.calculateLottoResult());
                 return;
             }catch (IllegalArgumentException e){
                 OutputView.printError(e.getMessage());

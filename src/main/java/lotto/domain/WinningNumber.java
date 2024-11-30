@@ -29,4 +29,13 @@ public class WinningNumber {
         }
         return set.contains(bonusNumber.getNumber());
     }
+
+    public boolean isSameNumberExists(Integer number) {
+        for(Integer winningNumber : winningNumbers){
+            if (number == winningNumber) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

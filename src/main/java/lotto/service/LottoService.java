@@ -1,16 +1,14 @@
 package lotto.service;
 
-import camp.nextstep.edu.missionutils.Randoms;
-import java.util.ArrayList;
 import java.util.List;
-import lotto.Lotto;
+import java.util.Map;
 import lotto.domain.BonusNumber;
+import lotto.domain.LottoCalculator;
 import lotto.domain.LottoFormatter;
 import lotto.domain.Lottos;
 import lotto.domain.WinningNumber;
 import lotto.domain.WinningNumbers;
-import lotto.exception.LottoException;
-import lotto.exception.LottoExceptionMessage;
+import lotto.dto.CalculateWinningNumberResult;
 import lotto.repository.LottoRepository;
 import lotto.validator.LottoNumberValidator;
 
@@ -42,6 +40,11 @@ public class LottoService {
 
 
     public String calculateLottoResult() {
-        return "";
+        Lottos lottos = lottoRepositroy.getLottos();
+        WinningNumbers winningNumbers = lottoRepositroy.getWinningNumbers();
+        List<CalculateWinningNumberResult> calculateWinningNumberResults = lottos.calculateLottosResult(winningNumbers);
+        Map<Integer, Integer> winningCountMap = LottoCalculator.calculateWinningNumber(calculateWinningNumberResults);
+        double winningRatio = LottoCalculator.calculateWinningRatio(winningCountMap,lottos.getLottoSize());
+        return LottoFormatter.formattedLottoResult(winningRatio,winningCountMap);
     }
 }

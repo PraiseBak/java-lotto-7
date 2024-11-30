@@ -25,4 +25,11 @@ public class BonusNumber {
     public Integer getNumber() {
         return bonusNumber;
     }
+
+    public boolean isSameNumberExists(Integer number) {
+        if(number == bonusNumber){
+            return true;
+        }
+        return false;
+    }
 }
