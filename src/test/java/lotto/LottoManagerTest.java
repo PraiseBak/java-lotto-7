@@ -1,19 +1,18 @@
 package lotto;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+class LottoManagerTest {
+    //로또는 6개까지만
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+    //로또는 1000원 단위로 구매가능
 
-class LottoTest {
+    //당첨 번호아 보너스번호는 중복불가
 
-    //로또는 중복되지않는다
-
-    //로또 범위를 넘어가지 않는다
-
-    //
 
     @Test
     void 로또_번호의_개수가_6개가_넘어가면_예외가_발생한다() {
