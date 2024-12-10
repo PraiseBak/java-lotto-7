@@ -7,7 +7,7 @@ public class OutputView {
     private static final String INPUT_BONUS_NUMBER = "보너스 번호를 입력해 주세요.";
 
     public static void printError(String message) {
-        println(message);
+        println("[ERROR] " + message);
     }
 
     private static void println(String message) {

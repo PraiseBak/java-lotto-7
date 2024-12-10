@@ -16,7 +16,7 @@ public class Application {
     }
 
     private static void printLottoResult() {
-        String lottoResult = lottoController.lottoResult();
+        String lottoResult = lottoController.calculateLottoResult();
         OutputView.printLottoResult(lottoResult);
     }
 

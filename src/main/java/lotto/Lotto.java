@@ -2,6 +2,7 @@ package lotto;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import lotto.utility.NumberUtility;
 import lotto.validator.UserInputValidator;
 
 public class Lotto {
@@ -20,5 +21,9 @@ public class Lotto {
         return numbers.stream()
                 .map((num) -> num + "")
                 .collect(Collectors.joining(", "));
+    }
+
+    public int countSameExists(List<Integer> numberList) {
+        return NumberUtility.countDuplicateNumbers(numberList,numbers);
     }
 }

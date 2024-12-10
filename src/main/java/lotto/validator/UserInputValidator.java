@@ -9,44 +9,30 @@ import lotto.utility.NumberUtility;
 import lotto.view.OutputView;
 
 public class UserInputValidator {
-    private static final int MAX = 31;
-    private static final int MIN = 1;
-    private static final String INVALID_LOTTO_NUMBER = "[ERROR] 로또번호는1부터45 사이의숫자여야합니다.";
-    private static final int MIN_LOTTO_NUMBER = 0;
-    private static final Integer MAX_LOTTO_NUMBER = 45;
-    private static final int LOTTO_NUMBER_SIZE = 6;
-    private static final String DUPLICATE_LOTTO_NUMBERS = "중복된 로또 숫자입니다.";
-
-    public static void validateMenus(String menu) {
-        String[] split = menu.split(",");
-        if(split.length == 0){
-            try {
-                throw new LottoException(LottoExceptionHelper.INVALID_LOTTO);
-            } catch (LottoException e) {
-                OutputView.printError(e.getMessage());
-            }
-        }
-        for(String menuInput : split){
-            String[] menuInfo = menuInput.split("-");
-        }
-    }
+    public static final int MAX = 31;
+    public static final int MIN = 1;
+    public static final String INVALID_LOTTO_NUMBER = "[ERROR] 로또번호는1부터45 사이의숫자여야합니다.";
+    public static final int MIN_LOTTO_NUMBER = 0;
+    public static final Integer MAX_LOTTO_NUMBER = 45;
+    public static final int LOTTO_NUMBER_SIZE = 6;
+    public static final String DUPLICATE_LOTTO_NUMBERS = "중복된 로또 숫자입니다.";
 
     public static void validateBuyLottos(String s) {
         validateNumber(s);
         int buyMoney = Integer.parseInt(s);
         validatePositive(buyMoney);
         if(buyMoney % 1000 != 0){
-            throw new LottoException(LottoExceptionHelper.INVALID_LOTTO_BUY_MONEY)
+            throw new LottoException(LottoExceptionHelper.INVALID_LOTTO_BUY_MONEY);
         }
     }
 
-    private static void validatePositive(int buyMoney) {
+    public static void validatePositive(int buyMoney) {
         if(!NumberUtility.isPositive(buyMoney)){
             throw new LottoException(LottoExceptionHelper.INVALID_NUMBER);
         }
     }
 
-    private static void validateNumber(String s) {
+    public static void validateNumber(String s) {
         if(!NumberUtility.isNumber(s)){
             throw new LottoException(LottoExceptionHelper.INVALID_NUMBER);
         }
@@ -63,7 +49,7 @@ public class UserInputValidator {
         }
     }
 
-    private static void validateDuplicateNumbers(List<Integer> numbers) {
+    public static void validateDuplicateNumbers(List<Integer> numbers) {
         Set<Integer> set = new HashSet<>();
         for(Integer num : numbers){
             if(set.contains(num)){
@@ -73,9 +59,16 @@ public class UserInputValidator {
         }
     }
 
-    private static void validateLottoNumber(Integer number) {
+    public static void validateLottoNumber(Integer number) {
         if(number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER){
             throw new LottoException(INVALID_LOTTO_NUMBER);
+        }
+    }
+
+    public static void validateNumbers(String input) {
+        String[] split = input.split(",");
+        for(String s : split ){
+            validateNumber(s);
         }
     }
 }

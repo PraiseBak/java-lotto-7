@@ -19,10 +19,10 @@ public class LottoController {
     }
 
     public void inputBonusNumber(String s) {
-        return;
+        lottoService.inputBonusNumber(s);
     }
 
-    public String lottoResult() {
-        return "";
+    public String calculateLottoResult() {
+        return lottoService.calculateLottoResult();
     }
 }
